@@ -22,38 +22,34 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-24 bg-white">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-12">
-              <div className="space-y-8">
-                <h1 className="hero-text leading-tight">
-                  Know exactly when you can retire
-                </h1>
-                <p className="body-large text-gray-600 max-w-xl">
-                  Get a personalized retirement timeline based on your current savings, income, and goals. No generic advice, no scary surprises - just clear answers about your future.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <a href="#calculator" className="btn-primary text-center px-8 py-4 text-lg">
-                  See My Retirement Date
-                </a>
-                <a href="#how-it-works" className="btn-secondary text-center px-8 py-4 text-lg">
-                  See how it works
-                </a>
-              </div>
-            </div>
-            <div className="flex justify-center lg:justify-end">
-              <div className="w-full max-w-2xl">
-                {/* Large Visual Placeholder */}
-                <div className="visual-placeholder visual-showcase h-96 w-full">
-                  <div className="text-center">
-                    <div className="text-2xl mb-2">📊</div>
-                    <div>Interactive Retirement Timeline</div>
-                    <div className="text-sm mt-2 opacity-75">Placeholder for your visual asset</div>
-                  </div>
-                </div>
-              </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/hero-background.png)',
+          }}
+        />
+        
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40" />
+        
+        {/* Content */}
+        <div className="relative z-10 container-wide text-center text-white">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <h1 className="hero-text text-white leading-tight">
+              Your retirement adventure starts here
+            </h1>
+            <p className="body-large text-white/90 max-w-2xl mx-auto leading-relaxed">
+              Take control of your financial future with confidence. Get a personalized retirement timeline that shows you exactly when you can retire and how to get there.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4">
+              <a href="#calculator" className="btn-primary text-center px-8 py-4 text-lg">
+                See My Retirement Date
+              </a>
+              <a href="#how-it-works" className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20 text-center px-8 py-4 text-lg">
+                See how it works
+              </a>
             </div>
           </div>
         </div>
