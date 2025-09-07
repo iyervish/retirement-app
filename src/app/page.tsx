@@ -3,7 +3,7 @@
 import TypewriterText from './components/TypewriterText';
 import HeroCarousel from './components/HeroCarousel';
 import { useState } from 'react';
-import { Users, TrendingUp, Target, Calculator, Award, Clock } from 'lucide-react';
+import { Users, TrendingUp, Target, Award, Clock, Calculator, BarChart3, Goal, Shield, PieChart, Bell } from 'lucide-react';
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -102,23 +102,15 @@ export default function Home() {
         <div className="container-wide">
           <div className="text-center mb-20">
             <h2 className="h1-text mb-6">Your personalized retirement plan</h2>
-            <p className="body-large text-gray-600 max-w-3xl mx-auto">
-              Work with certified financial planners to create a comprehensive retirement strategy tailored to your unique situation, goals, and timeline.
-            </p>
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <div className="card card-large bg-white border border-primary/20 shadow-xl">
-              <form onSubmit={handleSubmit} className="p-8">
-                <div className="text-center mb-8">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center">
-                    <Calculator size={40} className="text-primary" />
-                  </div>
-                  <h3 className="h2-text mb-4">Get Your Personalized Retirement Plan</h3>
-                  <p className="body-text text-gray-600">
-                    Tell us a bit about your current financial situation and we&apos;ll create a customized retirement strategy for you.
-                  </p>
-                </div>
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="text-center mb-12">
+                <p className="body-large text-gray-600">
+                  Tell us a bit about your current financial situation and we&apos;ll create a customized retirement strategy for you.
+                </p>
+              </div>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
                   {/* Age Input */}
@@ -200,7 +192,6 @@ export default function Home() {
                   </p>
                 </div>
               </form>
-            </div>
           </div>
         </div>
       </section>
@@ -496,12 +487,12 @@ export default function Home() {
             
             <div className="flex justify-center lg:justify-end">
               <div className="w-full max-w-lg">
-                <div className="visual-placeholder visual-showcase h-80 w-full">
-                  <div className="text-center text-white">
-                    <div className="text-3xl mb-4">🤝</div>
-                    <div className="text-lg font-semibold mb-2">Financial Planning Consultation</div>
-                    <div className="text-sm opacity-75">Work with certified professionals</div>
-                  </div>
+                <div className="relative h-80 w-full rounded-2xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="/ready.png" 
+                    alt="Ready to work with a certified financial planner" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
