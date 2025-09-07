@@ -3,7 +3,7 @@
 import TypewriterText from './components/TypewriterText';
 import HeroCarousel from './components/HeroCarousel';
 import { useState } from 'react';
-import { Users, TrendingUp, Target, Award, Clock, Calculator, BarChart3, Goal, Shield, PieChart, Bell } from 'lucide-react';
+import { Users, TrendingUp, Target, Award, Clock, Calculator, BarChart3, Goal, Shield, PieChart, Bell, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -12,6 +12,55 @@ export default function Home() {
     monthlyInvestment: '',
     k401Balance: ''
   });
+
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+
+  const features = [
+    {
+      icon: Calculator,
+      title: "Personalized Calculations",
+      description: "Get precise retirement dates based on your income, expenses, savings rate, and investment returns.",
+      color: "primary"
+    },
+    {
+      icon: BarChart3,
+      title: "Growth Projections",
+      description: "See how your savings will grow over time with realistic market projections and compound interest.",
+      color: "accent"
+    },
+    {
+      icon: Goal,
+      title: "Goal Setting",
+      description: "Set specific retirement goals and track your progress with clear milestones and actionable steps.",
+      color: "primary"
+    },
+    {
+      icon: Shield,
+      title: "Risk Assessment",
+      description: "Understand your risk tolerance and optimize your investment strategy for long-term success.",
+      color: "accent"
+    },
+    {
+      icon: PieChart,
+      title: "Portfolio Analysis",
+      description: "Analyze your current investments and get recommendations for better asset allocation.",
+      color: "primary"
+    },
+    {
+      icon: Bell,
+      title: "Smart Alerts",
+      description: "Receive timely notifications about market changes and opportunities to optimize your plan.",
+      color: "accent"
+    }
+  ];
+
+  const nextCard = () => {
+    setCurrentCardIndex((prev) => (prev + 1) % features.length);
+  };
+
+  const prevCard = () => {
+    setCurrentCardIndex((prev) => (prev - 1 + features.length) % features.length);
+  };
 
   const handleInputChange = (field: string, value: string) => {
     const newFormData = { ...formData, [field]: value };
@@ -93,6 +142,76 @@ export default function Home() {
                 See How It Works
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Everything You Need Section */}
+      <section className="section-large bg-white">
+        <div className="container-wide">
+          <div className="flex items-center justify-between mb-20">
+            <div className="flex-1">
+              <h2 className="h1-text mb-6">Everything You Need to Retire Smart</h2>
+              <p className="body-large text-gray-600 max-w-3xl">
+                Our comprehensive platform provides all the tools and insights you need to plan, track, and achieve your retirement goals with confidence.
+              </p>
+            </div>
+            <div className="flex items-center space-x-3 ml-8">
+              <button 
+                onClick={prevCard}
+                className="w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors"
+                aria-label="Previous card"
+              >
+                <ChevronLeft size={20} className="text-gray-600" />
+              </button>
+              <button 
+                onClick={nextCard}
+                className="w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors"
+                aria-label="Next card"
+              >
+                <ChevronRight size={20} className="text-gray-600" />
+              </button>
+            </div>
+          </div>
+          
+          <div className="relative overflow-hidden py-4">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentCardIndex * 40}%)` }}
+            >
+              {features.map((feature, index) => {
+                const IconComponent = feature.icon;
+                return (
+                  <div key={index} className="w-2/5 flex-shrink-0 px-3">
+                    <div className="card text-center h-full p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                      <div className="mb-8">
+                        <div className={`w-20 h-20 mx-auto mb-6 ${feature.color === 'primary' ? 'bg-primary/10' : 'bg-accent/10'} rounded-2xl flex items-center justify-center`}>
+                          <IconComponent size={40} className={feature.color === 'primary' ? 'text-primary' : 'text-accent'} />
+                        </div>
+                      </div>
+                      <h3 className="h2-text mb-6">{feature.title}</h3>
+                      <p className="body-large text-gray-600 leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          
+          {/* Carousel Indicators */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {features.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentCardIndex(index)}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  index === currentCardIndex ? 'bg-primary' : 'bg-gray-300'
+                }`}
+                aria-label={`Go to card ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -206,44 +325,54 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-12">
-            {/* Feature 1 */}
-            <div className="card text-center">
-              <div className="mb-8">
-                <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center">
-                  <Users size={40} className="text-primary" />
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-16">
+              {/* Step 1 */}
+              <div className="flex items-start space-x-8">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center relative">
+                    <span className="text-2xl font-bold text-primary" style={{ fontFamily: 'var(--font-fugaz-one), cursive, system-ui, sans-serif' }}>1</span>
+                    <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-0.5 h-8 bg-gradient-to-b from-primary/30 to-transparent"></div>
+                  </div>
+                </div>
+                <div className="flex-1 pt-2">
+                  <h3 className="h2-text mb-4">Personal consultation</h3>
+                  <p className="body-large text-gray-600 leading-relaxed">
+                    Start with a free consultation where we analyze your current situation and create a personalized retirement timeline based on your real numbers.
+                  </p>
                 </div>
               </div>
-              <h3 className="h2-text mb-4">Personal consultation</h3>
-              <p className="body-text text-gray-600">
-                Start with a free consultation where we analyze your current situation and create a personalized retirement timeline based on your real numbers.
-              </p>
-            </div>
 
-            {/* Feature 2 */}
-            <div className="card text-center">
-              <div className="mb-8">
-                <div className="w-20 h-20 mx-auto mb-6 bg-accent/10 rounded-2xl flex items-center justify-center">
-                  <TrendingUp size={40} className="text-accent" />
+              {/* Step 2 */}
+              <div className="flex items-start space-x-8">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center relative">
+                    <span className="text-2xl font-bold text-accent" style={{ fontFamily: 'var(--font-fugaz-one), cursive, system-ui, sans-serif' }}>2</span>
+                    <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-0.5 h-8 bg-gradient-to-b from-accent/30 to-transparent"></div>
+                  </div>
+                </div>
+                <div className="flex-1 pt-2">
+                  <h3 className="h2-text mb-4">Expert guidance</h3>
+                  <p className="body-large text-gray-600 leading-relaxed">
+                    Work with certified financial planners to optimize your retirement strategy. Get professional recommendations tailored to your goals and risk tolerance.
+                  </p>
                 </div>
               </div>
-              <h3 className="h2-text mb-4">Expert guidance</h3>
-              <p className="body-text text-gray-600">
-                Work with certified financial planners to optimize your retirement strategy. Get professional recommendations tailored to your goals and risk tolerance.
-              </p>
-            </div>
 
-            {/* Feature 3 */}
-            <div className="card text-center">
-              <div className="mb-8">
-                <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center">
-                  <Target size={40} className="text-primary" />
+              {/* Step 3 */}
+              <div className="flex items-start space-x-8">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
+                    <span className="text-2xl font-bold text-primary" style={{ fontFamily: 'var(--font-fugaz-one), cursive, system-ui, sans-serif' }}>3</span>
+                  </div>
+                </div>
+                <div className="flex-1 pt-2">
+                  <h3 className="h2-text mb-4">Complete retirement strategy</h3>
+                  <p className="body-large text-gray-600 leading-relaxed">
+                    Receive a comprehensive retirement plan with actionable steps, investment recommendations, and a clear roadmap to achieve your retirement goals.
+                  </p>
                 </div>
               </div>
-              <h3 className="h2-text mb-4">Complete retirement strategy</h3>
-              <p className="body-text text-gray-600">
-                Receive a comprehensive retirement plan with actionable steps, investment recommendations, and a clear roadmap to achieve your retirement goals.
-              </p>
             </div>
           </div>
         </div>

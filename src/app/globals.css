@@ -387,14 +387,17 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--forest-green-500), var(--gold-500));
+  height: 12px;
+  background: linear-gradient(90deg, var(--forest-green-500), var(--gold-500), var(--forest-green-500));
+  background-size: 200% 100%;
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 8px rgba(45, 90, 66, 0.3);
 }
 
 .card:hover::before {
   transform: scaleX(1);
+  background-position: 100% 0;
 }
 
 /* Hero Section Styles */
