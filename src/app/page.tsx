@@ -1,4 +1,5 @@
 import TypewriterText from './components/TypewriterText';
+import HeroCarousel from './components/HeroCarousel';
 
 export default function Home() {
   return (
@@ -25,13 +26,8 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(/hero-background.png)',
-          }}
-        />
+        {/* Hero Carousel */}
+        <HeroCarousel />
         
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/40" />
@@ -48,14 +44,11 @@ export default function Home() {
               into Success
             </h1>
             <p className="body-large text-white/90 max-w-2xl mx-auto leading-relaxed">
-              Take control of your financial future with confidence. Get a personalized retirement timeline that shows you exactly when you can retire and how to get there.
+              Get personalized retirement planning from certified financial professionals. No generic calculators - just expert guidance tailored to your unique situation and goals.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4">
+            <div className="flex justify-center pt-4">
               <a href="#calculator" className="btn-primary text-center px-8 py-4 text-lg">
-                See My Retirement Date
-              </a>
-              <a href="#how-it-works" className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20 text-center px-8 py-4 text-lg">
-                See how it works
+                Get My Free Consultation
               </a>
             </div>
           </div>
@@ -66,17 +59,17 @@ export default function Home() {
       <section className="section-large bg-white">
         <div className="container-wide">
           <div className="text-center mb-20">
-            <h2 className="h1-text mb-6">See your retirement future clearly</h2>
+            <h2 className="h1-text mb-6">Your personalized retirement plan</h2>
             <p className="body-large text-gray-600 max-w-3xl mx-auto">
-              Our interactive dashboard shows you exactly where you stand and what you need to do to reach your retirement goals.
+              Work with certified financial planners to create a comprehensive retirement strategy tailored to your unique situation, goals, and timeline.
             </p>
           </div>
           
           <div className="visual-placeholder visual-showcase h-[600px] w-full mb-16">
             <div className="text-center">
               <div className="text-4xl mb-4">📈</div>
-              <div className="text-xl font-semibold">Interactive Retirement Dashboard</div>
-              <div className="text-sm mt-2 opacity-75">Placeholder for your main product visualization</div>
+              <div className="text-xl font-semibold">Personalized Retirement Planning</div>
+              <div className="text-sm mt-2 opacity-75">Work with certified financial planners to create your custom plan</div>
             </div>
           </div>
         </div>
@@ -86,9 +79,9 @@ export default function Home() {
       <section id="how-it-works" className="section bg-gray-50">
         <div className="container">
           <div className="text-center mb-20">
-            <h2 className="h1-text mb-6">Everything you need to plan with confidence</h2>
+            <h2 className="h1-text mb-6">How we work together to plan your retirement</h2>
             <p className="body-large text-gray-600 max-w-3xl mx-auto">
-              Stop guessing about retirement. Get specific answers and actionable steps to reach your goals.
+              Our certified financial planners provide personalized guidance, not generic advice. Get expert support tailored to your unique situation.
             </p>
           </div>
           
@@ -109,9 +102,9 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-              <h3 className="h2-text mb-4">Get your exact date</h3>
+              <h3 className="h2-text mb-4">Personal consultation</h3>
               <p className="body-text text-gray-600">
-                Input your real numbers and get a personalized retirement timeline. No generic estimates or scary projections.
+                Start with a free consultation where we analyze your current situation and create a personalized retirement timeline based on your real numbers.
               </p>
             </div>
 
@@ -128,9 +121,9 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-              <h3 className="h2-text mb-4">Optimize your path</h3>
+              <h3 className="h2-text mb-4">Expert guidance</h3>
               <p className="body-text text-gray-600">
-                See exactly how small changes to savings or timeline affect your retirement date. Make informed decisions.
+                Work with certified financial planners to optimize your retirement strategy. Get professional recommendations tailored to your goals and risk tolerance.
               </p>
             </div>
 
@@ -157,9 +150,9 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-              <h3 className="h2-text mb-4">Track your progress</h3>
+              <h3 className="h2-text mb-4">Ongoing support</h3>
               <p className="body-text text-gray-600">
-                Stay on course with regular check-ins as your situation changes over time. Life happens, plans adapt.
+                Maintain an ongoing relationship with your financial planner. Regular check-ins ensure your plan stays current as your life and goals evolve.
               </p>
             </div>
           </div>
@@ -172,7 +165,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto text-center">
             <div className="mb-16">
               <blockquote className="h1-text mb-8 text-gray-800 leading-relaxed">
-                "I found out I could retire 3 years earlier than I thought. The recommendations were so simple but made a huge difference."
+                "Working with my financial planner completely changed my retirement outlook. I found out I could retire 3 years earlier than I thought, and the personalized recommendations made all the difference."
               </blockquote>
               <cite className="body-large text-gray-600">
                 — Sarah M., Teacher, Age 42
@@ -181,16 +174,16 @@ export default function Home() {
             
             <div className="grid md:grid-cols-3 gap-12 mb-16">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">10,000+</div>
-                <div className="body-text text-gray-600">Retirement calculations completed</div>
+                <div className="text-3xl font-bold text-primary mb-2">500+</div>
+                <div className="body-text text-gray-600">Clients served by certified planners</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">6 months</div>
-                <div className="body-text text-gray-600">Average accuracy of timelines</div>
+                <div className="text-3xl font-bold text-primary mb-2">15+</div>
+                <div className="body-text text-gray-600">Years of combined experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">BLS Data</div>
-                <div className="body-text text-gray-600">Based on Bureau of Labor Statistics</div>
+                <div className="text-3xl font-bold text-primary mb-2">CFP®</div>
+                <div className="body-text text-gray-600">Certified Financial Planner professionals</div>
               </div>
             </div>
           </div>
@@ -204,32 +197,32 @@ export default function Home() {
             <div className="space-y-6">
               <h2 className="h1-text mb-6">Common questions</h2>
               <p className="body-large text-gray-600">
-                We know retirement planning can feel overwhelming. Here are answers to the questions we hear most often.
+                We know working with a financial planner can feel intimidating. Here are answers to the questions we hear most often about our service.
               </p>
             </div>
             <div className="space-y-12">
               <div>
-                <h3 className="h2-text mb-4">How accurate can this really be?</h3>
+                <h3 className="h2-text mb-4">How is this different from online calculators?</h3>
                 <p className="body-text text-gray-600">
-                  We use your actual savings, income, and spending data - not generic assumptions. Most people find our timelines within 6 months of reality.
+                  Online calculators give generic answers. Our certified financial planners analyze your complete financial picture and create a personalized strategy that accounts for your unique situation, goals, and risk tolerance.
                 </p>
               </div>
               <div>
                 <h3 className="h2-text mb-4">What if I'm behind on savings?</h3>
                 <p className="body-text text-gray-600">
-                  That's exactly why you need to know where you stand. We'll show you specific steps to get back on track.
+                  That's exactly why you need professional guidance. Our planners will work with you to create a realistic plan to get back on track, with specific steps tailored to your situation.
                 </p>
               </div>
               <div>
-                <h3 className="h2-text mb-4">Is this just another generic calculator?</h3>
+                <h3 className="h2-text mb-4">Do I need to be wealthy to work with a planner?</h3>
                 <p className="body-text text-gray-600">
-                  Nope. We account for your real situation: salary growth, Social Security, healthcare costs, and lifestyle goals.
+                  Not at all. Our planners work with clients at all income levels. The key is having a plan, regardless of your current savings amount.
                 </p>
               </div>
               <div>
                 <h3 className="h2-text mb-4">What if my situation is complicated?</h3>
                 <p className="body-text text-gray-600">
-                  We handle multiple income sources, debt, real estate, and other assets. If it's truly complex, we'll recommend professional advice.
+                  Complex situations are exactly what certified financial planners excel at. We handle multiple income sources, business ownership, real estate, tax planning, and estate considerations.
                 </p>
               </div>
             </div>
@@ -242,9 +235,9 @@ export default function Home() {
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="text-white">
-              <h2 className="h1-text text-white mb-6 leading-tight">Ready to know when you can retire?</h2>
+              <h2 className="h1-text text-white mb-6 leading-tight">Ready to work with a certified financial planner?</h2>
               <p className="body-large text-white mb-8 opacity-95">
-                Get your personalized timeline in less than 5 minutes. No complex forms, no financial jargon - just clear answers about your future.
+                Start with a free consultation to discuss your retirement goals. No obligation, no pressure - just expert guidance to help you plan your future.
               </p>
               
               <div className="space-y-4 mb-8">
@@ -254,7 +247,7 @@ export default function Home() {
                       <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <span className="body-text text-white opacity-95">Personalized timeline based on your real numbers</span>
+                  <span className="body-text text-white opacity-95">Free consultation with certified financial planners</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center">
@@ -262,7 +255,7 @@ export default function Home() {
                       <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <span className="body-text text-white opacity-95">Actionable steps to optimize your retirement</span>
+                  <span className="body-text text-white opacity-95">Personalized retirement strategy tailored to your goals</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center">
@@ -270,16 +263,16 @@ export default function Home() {
                       <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <span className="body-text text-white opacity-95">Free to use, no credit card required</span>
+                  <span className="body-text text-white opacity-95">Ongoing support and plan adjustments</span>
                 </div>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="#calculator" className="btn-accent px-8 py-4 text-lg font-semibold">
-                  Calculate My Retirement Date
+                  Schedule Free Consultation
                 </a>
                 <a href="#how-it-works" className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20 px-8 py-4 text-lg">
-                  See how it works
+                  Learn About Our Process
                 </a>
               </div>
             </div>
@@ -288,9 +281,9 @@ export default function Home() {
               <div className="w-full max-w-lg">
                 <div className="visual-placeholder visual-showcase h-80 w-full">
                   <div className="text-center text-white">
-                    <div className="text-3xl mb-4">🎯</div>
-                    <div className="text-lg font-semibold mb-2">Retirement Calculator</div>
-                    <div className="text-sm opacity-75">Interactive tool placeholder</div>
+                    <div className="text-3xl mb-4">🤝</div>
+                    <div className="text-lg font-semibold mb-2">Financial Planning Consultation</div>
+                    <div className="text-sm opacity-75">Work with certified professionals</div>
                   </div>
                 </div>
               </div>
