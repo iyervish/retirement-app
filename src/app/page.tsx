@@ -1,7 +1,48 @@
+"use client";
+
 import TypewriterText from './components/TypewriterText';
 import HeroCarousel from './components/HeroCarousel';
+import { useState } from 'react';
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    age: '',
+    currentSavings: '',
+    monthlyInvestment: '',
+    k401Balance: ''
+  });
+
+  const handleInputChange = (field: string, value: string) => {
+    const newFormData = { ...formData, [field]: value };
+    setFormData(newFormData);
+  };
+
+  const formatCurrency = (value: string) => {
+    // Remove non-numeric characters
+    const numericValue = value.replace(/[^0-9]/g, '');
+    if (numericValue === '') return '';
+    
+    // Format as currency
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(parseInt(numericValue));
+  };
+
+  const handleCurrencyInput = (field: string, value: string) => {
+    const formatted = formatCurrency(value);
+    handleInputChange(field, formatted);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you would typically send the data to your backend
+    console.log('Form submitted:', formData);
+    alert('Thank you! Your information has been submitted. A financial planner will contact you soon.');
+  };
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -65,11 +106,108 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="visual-placeholder visual-showcase h-[600px] w-full mb-16">
-            <div className="text-center">
-              <div className="text-4xl mb-4">📈</div>
-              <div className="text-xl font-semibold">Personalized Retirement Planning</div>
-              <div className="text-sm mt-2 opacity-75">Work with certified financial planners to create your custom plan</div>
+          <div className="max-w-4xl mx-auto">
+            <div className="card card-large bg-white border border-primary/20 shadow-xl">
+              <form onSubmit={handleSubmit} className="p-8">
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-2xl flex items-center justify-center">
+                    <svg width="32" height="32" viewBox="0 0 32 32" className="text-primary">
+                      <rect x="4" y="4" width="24" height="28" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                      <rect x="8" y="8" width="16" height="2" fill="currentColor"/>
+                      <rect x="8" y="12" width="12" height="1" fill="currentColor"/>
+                      <rect x="8" y="15" width="14" height="1" fill="currentColor"/>
+                      <rect x="8" y="18" width="10" height="1" fill="currentColor"/>
+                      <circle cx="22" cy="20" r="2" fill="currentColor"/>
+                      <rect x="8" y="22" width="16" height="1" fill="currentColor"/>
+                      <rect x="8" y="25" width="12" height="1" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <h3 className="h2-text mb-4">Get Your Personalized Retirement Plan</h3>
+                  <p className="body-text text-gray-600">
+                    Tell us a bit about your current financial situation and we&apos;ll create a customized retirement strategy for you.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                  {/* Age Input */}
+                  <div>
+                    <label htmlFor="age" className="block text-sm font-medium text-gray-700 mb-2">
+                      Current Age
+                    </label>
+                    <input
+                      type="number"
+                      id="age"
+                      value={formData.age}
+                      onChange={(e) => handleInputChange('age', e.target.value)}
+                      placeholder="35"
+                      min="18"
+                      max="100"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-lg"
+                      required
+                    />
+                  </div>
+
+                  {/* Current Savings Input */}
+                  <div>
+                    <label htmlFor="currentSavings" className="block text-sm font-medium text-gray-700 mb-2">
+                      Current Savings
+                    </label>
+                    <input
+                      type="text"
+                      id="currentSavings"
+                      value={formData.currentSavings}
+                      onChange={(e) => handleCurrencyInput('currentSavings', e.target.value)}
+                      placeholder="$50,000"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-lg"
+                      required
+                    />
+                  </div>
+
+                  {/* Monthly Investment Input */}
+                  <div>
+                    <label htmlFor="monthlyInvestment" className="block text-sm font-medium text-gray-700 mb-2">
+                      Monthly Investment
+                    </label>
+                    <input
+                      type="text"
+                      id="monthlyInvestment"
+                      value={formData.monthlyInvestment}
+                      onChange={(e) => handleCurrencyInput('monthlyInvestment', e.target.value)}
+                      placeholder="$500"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-lg"
+                      required
+                    />
+                  </div>
+
+                  {/* 401k Balance Input */}
+                  <div>
+                    <label htmlFor="k401Balance" className="block text-sm font-medium text-gray-700 mb-2">
+                      401k Balance
+                    </label>
+                    <input
+                      type="text"
+                      id="k401Balance"
+                      value={formData.k401Balance}
+                      onChange={(e) => handleCurrencyInput('k401Balance', e.target.value)}
+                      placeholder="$25,000"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-lg"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    className="btn-primary px-12 py-4 text-lg font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+                  >
+                    Get Started
+                  </button>
+                  <p className="text-sm text-gray-500 mt-4">
+                    Free consultation • No obligation • Certified financial planners
+                  </p>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -290,8 +428,8 @@ export default function Home() {
                 <div className="body-text text-white opacity-90">Clients served by certified planners</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">15+</div>
-                <div className="body-text text-white opacity-90">Years of combined experience</div>
+                <div className="text-3xl font-bold text-white mb-2">15</div>
+                <div className="body-text text-white opacity-90">Years of average experience</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-2">CFP®</div>
