@@ -185,7 +185,7 @@ export default function Home() {
               <div className="space-y-6 mb-12">
                 <div className="grid md:grid-cols-2 gap-8 text-left">
                   <div className="space-y-4">
-                    <h3 className="h3-text text-primary mb-4">What's included:</h3>
+                    <h3 className="h3-text text-primary mb-4">What&apos;s included:</h3>
                     <div className="space-y-3">
                       <div className="flex items-start space-x-3">
                         <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -293,7 +293,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto text-center">
             <div className="mb-16">
               <blockquote className="h1-text mb-8 text-gray-800 leading-relaxed">
-                "Working with my financial planner completely changed my retirement outlook. I found out I could retire 3 years earlier than I thought, and the personalized recommendations made all the difference."
+                &ldquo;Working with my financial planner completely changed my retirement outlook. I found out I could retire 3 years earlier than I thought, and the personalized recommendations made all the difference.&rdquo;
               </blockquote>
               <cite className="body-large text-gray-600">
                 — Sarah M., Teacher, Age 42
@@ -336,9 +336,9 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <h3 className="h2-text mb-4">What if I'm behind on savings?</h3>
+                <h3 className="h2-text mb-4">What if I&apos;m behind on savings?</h3>
                 <p className="body-text text-gray-600">
-                  That's exactly why you need professional guidance. Our planners will work with you to create a realistic plan to get back on track, with specific steps tailored to your situation.
+                  That&apos;s exactly why you need professional guidance. Our planners will work with you to create a realistic plan to get back on track, with specific steps tailored to your situation.
                 </p>
               </div>
               <div>

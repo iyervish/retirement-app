@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 interface TypewriterTextProps {
   initialText: string;
@@ -17,18 +17,20 @@ export default function TypewriterText({
   const [isDeleting, setIsDeleting] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
 
-  useEffect(() => {
-    // Start the animation after a delay
-    const timer = setTimeout(() => {
-      // Start deleting letter by letter
-      setIsDeleting(true);
-      deleteText();
-    }, 2000); // Show initial text for 2 seconds
+  const typeText = useCallback(() => {
+    let text = '';
+    const typeInterval = setInterval(() => {
+      if (text.length < finalText.length) {
+        text = finalText.slice(0, text.length + 1);
+        setCurrentText(text);
+      } else {
+        clearInterval(typeInterval);
+        setIsTyping(false);
+      }
+    }, 150); // Type one letter every 150ms
+  }, [finalText]);
 
-    return () => clearTimeout(timer);
-  }, [initialText, finalText]);
-
-  const deleteText = () => {
+  const deleteText = useCallback(() => {
     let text = initialText;
     const deleteInterval = setInterval(() => {
       if (text.length > 0) {
@@ -44,20 +46,18 @@ export default function TypewriterText({
         }, 500); // Brief pause before typing
       }
     }, 150); // Delete one letter every 150ms
-  };
+  }, [initialText, typeText]);
 
-  const typeText = () => {
-    let text = '';
-    const typeInterval = setInterval(() => {
-      if (text.length < finalText.length) {
-        text = finalText.slice(0, text.length + 1);
-        setCurrentText(text);
-      } else {
-        clearInterval(typeInterval);
-        setIsTyping(false);
-      }
-    }, 150); // Type one letter every 150ms
-  };
+  useEffect(() => {
+    // Start the animation after a delay
+    const timer = setTimeout(() => {
+      // Start deleting letter by letter
+      setIsDeleting(true);
+      deleteText();
+    }, 2000); // Show initial text for 2 seconds
+
+    return () => clearTimeout(timer);
+  }, [initialText, finalText, deleteText]);
 
   return (
     <span className={`typewriter-container ${className}`}>
