@@ -36,7 +36,7 @@ export default function Home() {
         <div className="relative z-10 container-wide text-center text-white">
           <div className="max-w-4xl mx-auto space-y-8">
             <h1 className="hero-text text-white leading-tight">
-              Turn Your Retirement{" "}
+              Turn Your Early Retirement{" "}
               <TypewriterText 
                 initialText="Dream" 
                 finalText="Reality" 
@@ -48,7 +48,7 @@ export default function Home() {
             </p>
             <div className="flex justify-center pt-4">
               <a href="#calculator" className="btn-primary text-center px-8 py-4 text-lg">
-                Get My Free Consultation
+                See How It Works
               </a>
             </div>
           </div>
@@ -150,9 +150,9 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-              <h3 className="h2-text mb-4">Ongoing support</h3>
+              <h3 className="h2-text mb-4">Complete retirement strategy</h3>
               <p className="body-text text-gray-600">
-                Maintain an ongoing relationship with your financial planner. Regular check-ins ensure your plan stays current as your life and goals evolve.
+                Receive a comprehensive retirement plan with actionable steps, investment recommendations, and a clear roadmap to achieve your retirement goals.
               </p>
             </div>
           </div>
@@ -160,26 +160,22 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="section bg-white">
+      <section id="pricing" className="section bg-gray-50">
         <div className="container">
           <div className="text-center mb-20">
             <h2 className="h1-text mb-6">Simple, transparent pricing</h2>
             <p className="body-large text-gray-600 max-w-3xl mx-auto">
-              Pay only for the value we provide. Our fee structure is straightforward and scales with your assets.
+              One-time comprehensive retirement planning service. Pay once and receive your complete personalized retirement strategy.
             </p>
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <div className="card card-large text-center relative overflow-hidden">
-              {/* Premium badge */}
-              <div className="absolute top-6 right-6 bg-accent text-gray-900 px-4 py-2 rounded-full text-sm font-semibold">
-                Most Popular
-              </div>
+            <div className="card card-large text-center bg-white border border-primary/20 shadow-xl hover:shadow-2xl transition-shadow duration-300">
               
               <div className="mb-8">
                 <div className="text-6xl font-bold text-primary mb-4">$500</div>
                 <div className="text-xl text-gray-600 mb-2">per $1 million in assets</div>
-                <div className="text-sm text-gray-500">Minimum fee: $500 annually</div>
+                <div className="text-sm text-gray-500">One-time comprehensive service</div>
               </div>
               
               <div className="space-y-6 mb-12">
@@ -201,7 +197,7 @@ export default function Home() {
                             <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </div>
-                        <span className="body-text">Quarterly plan reviews</span>
+                        <span className="body-text">Comprehensive financial analysis</span>
                       </div>
                       <div className="flex items-start space-x-3">
                         <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -209,7 +205,7 @@ export default function Home() {
                             <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </div>
-                        <span className="body-text">Ongoing financial guidance</span>
+                        <span className="body-text">Detailed retirement roadmap</span>
                       </div>
                       <div className="flex items-start space-x-3">
                         <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -247,7 +243,7 @@ export default function Home() {
                             <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </div>
-                        <span className="body-text">Priority support access</span>
+                        <span className="body-text">Written retirement plan document</span>
                       </div>
                       <div className="flex items-start space-x-3">
                         <div className="w-5 h-5 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -267,19 +263,19 @@ export default function Home() {
                   Get Started Today
                 </a>
                 <div className="text-sm text-gray-500">
-                  No setup fees • Cancel anytime • 30-day money-back guarantee
+                  No setup fees • One-time payment • 30-day money-back guarantee
                 </div>
               </div>
             </div>
             
             {/* Pricing explanation */}
             <div className="mt-12 text-center">
-              <div className="bg-gray-50 rounded-2xl p-8">
+              <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg">
                 <h3 className="h3-text text-primary mb-4">How our pricing works</h3>
                 <p className="body-text text-gray-600 max-w-2xl mx-auto">
-                  We believe in transparent, asset-based pricing. If you have $2 million in assets, you pay $1,000 annually. 
+                  We believe in transparent, asset-based pricing for our one-time comprehensive service. If you have $2 million in assets, you pay $1,000 one-time. 
                   If you have $500,000 in assets, you pay our minimum fee of $500. This ensures our services are accessible 
-                  while maintaining the quality of personalized financial planning you deserve.
+                  while providing you with a complete, personalized retirement strategy that you can implement on your own.
                 </p>
               </div>
             </div>
@@ -391,16 +387,13 @@ export default function Home() {
                       <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <span className="body-text text-white opacity-95">Ongoing support and plan adjustments</span>
+                  <span className="body-text text-white opacity-95">Complete retirement strategy and implementation guide</span>
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex justify-start">
                 <a href="#calculator" className="btn-accent px-8 py-4 text-lg font-semibold">
-                  Schedule Free Consultation
-                </a>
-                <a href="#how-it-works" className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white/20 px-8 py-4 text-lg">
-                  Learn About Our Process
+                  Get Started
                 </a>
               </div>
             </div>
