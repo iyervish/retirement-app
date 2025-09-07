@@ -44,7 +44,7 @@ export default function Home() {
               into Success
             </h1>
             <p className="body-large text-white/90 max-w-2xl mx-auto leading-relaxed">
-              Get personalized retirement planning from certified financial professionals. No generic calculators - just expert guidance tailored to your unique situation and goals.
+              Get personalized retirement planning from certified financial professionals. Expert guidance tailored to your unique situation and goals.
             </p>
             <div className="flex justify-center pt-4">
               <a href="#calculator" className="btn-primary text-center px-8 py-4 text-lg">
