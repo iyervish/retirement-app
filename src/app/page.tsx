@@ -1,3 +1,5 @@
+import TypewriterText from './components/TypewriterText';
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -38,7 +40,12 @@ export default function Home() {
         <div className="relative z-10 container-wide text-center text-white">
           <div className="max-w-4xl mx-auto space-y-8">
             <h1 className="hero-text text-white leading-tight">
-              Your retirement adventure starts here
+              Turn Your Retirement{" "}
+              <TypewriterText 
+                initialText="Dream" 
+                finalText="Reality" 
+              />{" "}
+              into Success
             </h1>
             <p className="body-large text-white/90 max-w-2xl mx-auto leading-relaxed">
               Take control of your financial future with confidence. Get a personalized retirement timeline that shows you exactly when you can retire and how to get there.
