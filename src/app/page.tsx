@@ -267,47 +267,35 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
-            {/* Pricing explanation */}
-            <div className="mt-12 text-center">
-              <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg">
-                <h3 className="h3-text text-primary mb-4">How our pricing works</h3>
-                <p className="body-text text-gray-600 max-w-2xl mx-auto">
-                  We believe in transparent, asset-based pricing for our one-time comprehensive service. If you have $2 million in assets, you pay $1,000 one-time. 
-                  If you have $500,000 in assets, you pay our minimum fee of $500. This ensures our services are accessible 
-                  while providing you with a complete, personalized retirement strategy that you can implement on your own.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Social Proof Section */}
-      <section className="section-large bg-white">
+      <section className="section-large" style={{backgroundColor: 'var(--forest-green-700)'}}>
         <div className="container-wide">
-          <div className="max-w-5xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-center text-white">
             <div className="mb-16">
-              <blockquote className="h1-text mb-8 text-gray-800 leading-relaxed">
+              <blockquote className="h1-text mb-8 text-white leading-relaxed">
                 &ldquo;Working with my financial planner completely changed my retirement outlook. I found out I could retire 3 years earlier than I thought, and the personalized recommendations made all the difference.&rdquo;
               </blockquote>
-              <cite className="body-large text-gray-600">
+              <cite className="body-large text-white opacity-90">
                 — Sarah M., Teacher, Age 42
               </cite>
             </div>
             
             <div className="grid md:grid-cols-3 gap-12 mb-16">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                <div className="body-text text-gray-600">Clients served by certified planners</div>
+                <div className="text-3xl font-bold text-white mb-2">500+</div>
+                <div className="body-text text-white opacity-90">Clients served by certified planners</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">15+</div>
-                <div className="body-text text-gray-600">Years of combined experience</div>
+                <div className="text-3xl font-bold text-white mb-2">15+</div>
+                <div className="body-text text-white opacity-90">Years of combined experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">CFP®</div>
-                <div className="body-text text-gray-600">Certified Financial Planner professionals</div>
+                <div className="text-3xl font-bold text-white mb-2">CFP®</div>
+                <div className="body-text text-white opacity-90">Certified Financial Planner professionals</div>
               </div>
             </div>
           </div>
