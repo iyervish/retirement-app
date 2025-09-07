@@ -9,7 +9,7 @@ export default function Home() {
         <div className="container">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center">
-              <span className="logo-text">RetireWise</span>
+              <span className="logo-text text-3xl">RetireWise</span>
             </div>
             <div className="hidden md:flex items-center space-x-12">
               <a href="#how-it-works" className="body-text hover:text-primary transition-colors">How it Works</a>
@@ -425,7 +425,7 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-8 md:mb-0">
-              <span className="logo-text">RetireWise</span>
+              <span className="logo-text text-2xl">RetireWise</span>
             </div>
             <div className="flex space-x-8">
               <a href="#privacy" className="body-text text-gray-600 hover:text-primary transition-colors">Privacy</a>
