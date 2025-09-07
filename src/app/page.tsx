@@ -3,6 +3,7 @@
 import TypewriterText from './components/TypewriterText';
 import HeroCarousel from './components/HeroCarousel';
 import { useState } from 'react';
+import { Users, TrendingUp, Target, Calculator, Award, Clock } from 'lucide-react';
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -110,17 +111,8 @@ export default function Home() {
             <div className="card card-large bg-white border border-primary/20 shadow-xl">
               <form onSubmit={handleSubmit} className="p-8">
                 <div className="text-center mb-8">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-2xl flex items-center justify-center">
-                    <svg width="32" height="32" viewBox="0 0 32 32" className="text-primary">
-                      <rect x="4" y="4" width="24" height="28" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                      <rect x="8" y="8" width="16" height="2" fill="currentColor"/>
-                      <rect x="8" y="12" width="12" height="1" fill="currentColor"/>
-                      <rect x="8" y="15" width="14" height="1" fill="currentColor"/>
-                      <rect x="8" y="18" width="10" height="1" fill="currentColor"/>
-                      <circle cx="22" cy="20" r="2" fill="currentColor"/>
-                      <rect x="8" y="22" width="16" height="1" fill="currentColor"/>
-                      <rect x="8" y="25" width="12" height="1" fill="currentColor"/>
-                    </svg>
+                  <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center">
+                    <Calculator size={40} className="text-primary" />
                   </div>
                   <h3 className="h2-text mb-4">Get Your Personalized Retirement Plan</h3>
                   <p className="body-text text-gray-600">
@@ -227,17 +219,8 @@ export default function Home() {
             {/* Feature 1 */}
             <div className="card text-center">
               <div className="mb-8">
-                <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-2xl flex items-center justify-center">
-                  <svg width="32" height="32" viewBox="0 0 32 32" className="text-primary">
-                    <rect x="4" y="4" width="24" height="28" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <rect x="8" y="8" width="16" height="2" fill="currentColor"/>
-                    <rect x="8" y="12" width="12" height="1" fill="currentColor"/>
-                    <rect x="8" y="15" width="14" height="1" fill="currentColor"/>
-                    <rect x="8" y="18" width="10" height="1" fill="currentColor"/>
-                    <circle cx="22" cy="20" r="2" fill="currentColor"/>
-                    <rect x="8" y="22" width="16" height="1" fill="currentColor"/>
-                    <rect x="8" y="25" width="12" height="1" fill="currentColor"/>
-                  </svg>
+                <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center">
+                  <Users size={40} className="text-primary" />
                 </div>
               </div>
               <h3 className="h2-text mb-4">Personal consultation</h3>
@@ -249,14 +232,8 @@ export default function Home() {
             {/* Feature 2 */}
             <div className="card text-center">
               <div className="mb-8">
-                <div className="w-16 h-16 mx-auto mb-4 bg-accent/10 rounded-2xl flex items-center justify-center">
-                  <svg width="32" height="32" viewBox="0 0 32 32" className="text-accent">
-                    <path d="M4 24 L12 16 L20 20 L28 8" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <circle cx="12" cy="16" r="2" fill="currentColor"/>
-                    <circle cx="20" cy="20" r="2" fill="currentColor"/>
-                    <circle cx="28" cy="8" r="2" fill="currentColor"/>
-                    <path d="M26 6 L30 10 M30 6 L26 10" stroke="currentColor" strokeWidth="1.5"/>
-                  </svg>
+                <div className="w-20 h-20 mx-auto mb-6 bg-accent/10 rounded-2xl flex items-center justify-center">
+                  <TrendingUp size={40} className="text-accent" />
                 </div>
               </div>
               <h3 className="h2-text mb-4">Expert guidance</h3>
@@ -268,24 +245,8 @@ export default function Home() {
             {/* Feature 3 */}
             <div className="card text-center">
               <div className="mb-8">
-                <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-2xl flex items-center justify-center">
-                  <svg width="32" height="32" viewBox="0 0 32 32" className="text-primary">
-                    <rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <rect x="6" y="4" width="20" height="4" rx="1" fill="currentColor"/>
-                    <rect x="8" y="12" width="3" height="2" fill="currentColor"/>
-                    <rect x="13" y="12" width="3" height="2" fill="currentColor"/>
-                    <rect x="18" y="12" width="3" height="2" fill="currentColor"/>
-                    <rect x="23" y="12" width="3" height="2" fill="currentColor"/>
-                    <rect x="8" y="16" width="3" height="2" fill="currentColor"/>
-                    <rect x="13" y="16" width="3" height="2" fill="currentColor"/>
-                    <rect x="18" y="16" width="3" height="2" fill="currentColor"/>
-                    <rect x="23" y="16" width="3" height="2" fill="currentColor"/>
-                    <rect x="8" y="20" width="3" height="2" fill="currentColor"/>
-                    <rect x="13" y="20" width="3" height="2" fill="currentColor"/>
-                    <rect x="18" y="20" width="3" height="2" fill="currentColor"/>
-                    <rect x="23" y="20" width="3" height="2" fill="currentColor"/>
-                    <circle cx="21" cy="14" r="1.5" fill="#FFB627"/>
-                  </svg>
+                <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center">
+                  <Target size={40} className="text-primary" />
                 </div>
               </div>
               <h3 className="h2-text mb-4">Complete retirement strategy</h3>
@@ -424,15 +385,24 @@ export default function Home() {
             
             <div className="grid md:grid-cols-3 gap-12 mb-16">
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">500+</div>
+                <div className="flex items-center justify-center mb-4">
+                  <Users size={48} className="text-white mr-3" />
+                  <div className="text-3xl font-bold text-white">500+</div>
+                </div>
                 <div className="body-text text-white opacity-90">Clients served by certified planners</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">15</div>
+                <div className="flex items-center justify-center mb-4">
+                  <Clock size={48} className="text-white mr-3" />
+                  <div className="text-3xl font-bold text-white">15</div>
+                </div>
                 <div className="body-text text-white opacity-90">Years of average experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">CFP®</div>
+                <div className="flex items-center justify-center mb-4">
+                  <Award size={48} className="text-white mr-3" />
+                  <div className="text-3xl font-bold text-white">CFP®</div>
+                </div>
                 <div className="body-text text-white opacity-90">Certified Financial Planner professionals</div>
               </div>
             </div>
