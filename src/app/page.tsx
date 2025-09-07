@@ -9,7 +9,7 @@ export default function Home() {
         <div className="container">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center">
-              <span className="h1-text text-primary">RetireWise</span>
+              <span className="logo-text">RetireWise</span>
             </div>
             <div className="hidden md:flex items-center space-x-12">
               <a href="#how-it-works" className="body-text hover:text-primary transition-colors">How it Works</a>
@@ -159,6 +159,134 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section id="pricing" className="section bg-white">
+        <div className="container">
+          <div className="text-center mb-20">
+            <h2 className="h1-text mb-6">Simple, transparent pricing</h2>
+            <p className="body-large text-gray-600 max-w-3xl mx-auto">
+              Pay only for the value we provide. Our fee structure is straightforward and scales with your assets.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="card card-large text-center relative overflow-hidden">
+              {/* Premium badge */}
+              <div className="absolute top-6 right-6 bg-accent text-gray-900 px-4 py-2 rounded-full text-sm font-semibold">
+                Most Popular
+              </div>
+              
+              <div className="mb-8">
+                <div className="text-6xl font-bold text-primary mb-4">$500</div>
+                <div className="text-xl text-gray-600 mb-2">per $1 million in assets</div>
+                <div className="text-sm text-gray-500">Minimum fee: $500 annually</div>
+              </div>
+              
+              <div className="space-y-6 mb-12">
+                <div className="grid md:grid-cols-2 gap-8 text-left">
+                  <div className="space-y-4">
+                    <h3 className="h3-text text-primary mb-4">What's included:</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <span className="body-text">Personalized retirement plan</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <span className="body-text">Quarterly plan reviews</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <span className="body-text">Ongoing financial guidance</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <span className="body-text">Tax optimization strategies</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <h3 className="h3-text text-primary mb-4">Additional benefits:</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-5 h-5 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <span className="body-text">Estate planning consultation</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-5 h-5 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <span className="body-text">Investment portfolio review</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-5 h-5 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <span className="body-text">Priority support access</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-5 h-5 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <span className="body-text">Educational resources</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                <a href="#calculator" className="btn-primary px-12 py-4 text-lg font-semibold">
+                  Get Started Today
+                </a>
+                <div className="text-sm text-gray-500">
+                  No setup fees • Cancel anytime • 30-day money-back guarantee
+                </div>
+              </div>
+            </div>
+            
+            {/* Pricing explanation */}
+            <div className="mt-12 text-center">
+              <div className="bg-gray-50 rounded-2xl p-8">
+                <h3 className="h3-text text-primary mb-4">How our pricing works</h3>
+                <p className="body-text text-gray-600 max-w-2xl mx-auto">
+                  We believe in transparent, asset-based pricing. If you have $2 million in assets, you pay $1,000 annually. 
+                  If you have $500,000 in assets, you pay our minimum fee of $500. This ensures our services are accessible 
+                  while maintaining the quality of personalized financial planning you deserve.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Social Proof Section */}
       <section className="section-large bg-white">
         <div className="container-wide">
@@ -297,7 +425,7 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-8 md:mb-0">
-              <span className="h2-text text-primary">RetireWise</span>
+              <span className="logo-text">RetireWise</span>
             </div>
             <div className="flex space-x-8">
               <a href="#privacy" className="body-text text-gray-600 hover:text-primary transition-colors">Privacy</a>

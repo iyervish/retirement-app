@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Limelight&display=swap');
 
 :root {
   /* Design System Colors */
@@ -126,6 +126,16 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: var(--gray-500);
+}
+
+/* Logo Typography */
+.logo-text {
+  font-family: 'Limelight', cursive;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--forest-green-700);
+  letter-spacing: 0.5px;
 }
 
 /* White text overrides for dark backgrounds */
