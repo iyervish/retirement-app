@@ -35,12 +35,10 @@ export default function Auth() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <nav className="bg-white border-b border-gray-200">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <span className="logo-text text-2xl">RetireWise</span>
-            <div className="text-sm text-gray-500">
-              Almost there!
-            </div>
+        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+          <span className="logo-text text-3xl">RetireWise</span>
+          <div className="text-sm text-gray-500">
+            Almost there!
           </div>
         </div>
       </nav>
@@ -49,7 +47,7 @@ export default function Auth() {
       <div className="container mx-auto px-6 py-16">
         <div className="max-w-md mx-auto">
           {/* Header */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-12 mt-16">
             <h1 className="h1-text mb-4">
               {isSignUp ? 'Create your account' : 'Welcome back'}
             </h1>

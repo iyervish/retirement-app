@@ -119,34 +119,30 @@ export default function GetStarted() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <nav className="bg-white border-b border-gray-200">
-        <div className="container mx-auto px-6" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
-          <div className="flex items-center justify-between">
-            <span className="logo-text text-2xl">RetireWise</span>
-            <div className="text-sm text-gray-500">
-              Step {currentStep + 1} of {questions.length}
-            </div>
+        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+          <span className="logo-text text-3xl">RetireWise</span>
+          <div className="text-sm text-gray-500">
+            Step {currentStep + 1} of {questions.length}
           </div>
         </div>
       </nav>
 
-      {/* Progress Bar */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="container mx-auto px-6 py-4">
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div
-              className="bg-primary h-2 rounded-full transition-all duration-300"
-              style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
-            />
-          </div>
-        </div>
-      </div>
-
       {/* Question Content */}
       <div className="container mx-auto px-6 py-16">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 mt-16">
             <h1 className="h1-text mb-4">{currentQuestion.title}</h1>
             <p className="body-large text-gray-600">{currentQuestion.subtitle}</p>
+          </div>
+
+          {/* Progress Bar */}
+          <div className="mb-8">
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div
+                className="bg-primary h-2 rounded-full transition-all duration-300"
+                style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
+              />
+            </div>
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
