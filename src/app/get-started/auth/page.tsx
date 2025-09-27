@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
 
 export default function Auth() {
+  const router = useRouter();
   const [isSignUp, setIsSignUp] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -24,10 +26,14 @@ export default function Auth() {
       // Handle sign up
       console.log('Sign up:', formData);
       alert('Welcome to RetireWise! Your account has been created successfully.');
+      // Redirect to dashboard after successful signup
+      router.push('/dashboard');
     } else {
       // Handle sign in
       console.log('Sign in:', { email: formData.email, password: formData.password });
       alert('Welcome back! You have been signed in successfully.');
+      // Redirect to dashboard after successful signin
+      router.push('/dashboard');
     }
   };
 
