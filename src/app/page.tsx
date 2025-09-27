@@ -6,12 +6,6 @@ import { useState } from 'react';
 import { Users, TrendingUp, Target, Award, Clock, Calculator, BarChart3, Goal, Shield, PieChart, Bell, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Home() {
-  const [formData, setFormData] = useState({
-    age: '',
-    currentSavings: '',
-    monthlyInvestment: '',
-    k401Balance: ''
-  });
 
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
@@ -62,36 +56,6 @@ export default function Home() {
     setCurrentCardIndex((prev) => (prev - 1 + features.length) % features.length);
   };
 
-  const handleInputChange = (field: string, value: string) => {
-    const newFormData = { ...formData, [field]: value };
-    setFormData(newFormData);
-  };
-
-  const formatCurrency = (value: string) => {
-    // Remove non-numeric characters
-    const numericValue = value.replace(/[^0-9]/g, '');
-    if (numericValue === '') return '';
-    
-    // Format as currency
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(parseInt(numericValue));
-  };
-
-  const handleCurrencyInput = (field: string, value: string) => {
-    const formatted = formatCurrency(value);
-    handleInputChange(field, formatted);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData);
-    alert('Thank you! Your information has been submitted. A financial planner will contact you soon.');
-  };
 
   return (
     <div className="min-h-screen">
@@ -106,10 +70,10 @@ export default function Home() {
               <a href="#how-it-works" className="body-text hover:text-primary transition-colors">How it Works</a>
               <a href="#pricing" className="body-text hover:text-primary transition-colors">Pricing</a>
               <a href="#about" className="body-text hover:text-primary transition-colors">About</a>
-              <a href="#get-started" className="btn-primary">Get Started</a>
+              <a href="/get-started" className="btn-primary">Get Started</a>
             </div>
             <div className="md:hidden">
-              <button className="btn-primary">Get Started</button>
+              <a href="/get-started" className="btn-primary">Get Started</a>
             </div>
           </div>
         </div>
@@ -138,8 +102,8 @@ export default function Home() {
               Get personalized retirement planning from certified financial professionals. Expert guidance tailored to your unique situation and goals.
             </p>
             <div className="flex justify-center pt-4">
-              <a href="#calculator" className="btn-primary text-center px-8 py-4 text-lg">
-                See How It Works
+              <a href="/get-started" className="btn-primary text-center px-8 py-4 text-lg">
+                Get Started Now
               </a>
             </div>
           </div>
@@ -223,94 +187,45 @@ export default function Home() {
             <h2 className="h1-text mb-6">Your personalized retirement plan</h2>
           </div>
           
-          <div className="max-w-4xl mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <div className="text-center mb-12">
-                <p className="body-large text-gray-600">
-                  Tell us a bit about your current financial situation and we&apos;ll create a customized retirement strategy for you.
-                </p>
-              </div>
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="mb-12">
+              <p className="body-large text-gray-600 mb-8">
+                Ready to create your personalized retirement strategy? Our expert financial planners will guide you through a quick assessment to build your custom retirement roadmap.
+              </p>
+            </div>
 
-                <div className="grid md:grid-cols-2 gap-6 mb-8">
-                  {/* Age Input */}
-                  <div>
-                    <label htmlFor="age" className="block text-sm font-medium text-gray-700 mb-2">
-                      Current Age
-                    </label>
-                    <input
-                      type="number"
-                      id="age"
-                      value={formData.age}
-                      onChange={(e) => handleInputChange('age', e.target.value)}
-                      placeholder="35"
-                      min="18"
-                      max="100"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-lg"
-                      required
-                    />
-                  </div>
+            <div className="bg-white rounded-2xl shadow-lg p-12 mb-8">
+              <h3 className="h2-text mb-6">Start Your Retirement Journey</h3>
+              <p className="body-text text-gray-600 mb-8">
+                Answer a few questions about your financial situation and goals, then connect with our certified planners for your personalized strategy.
+              </p>
 
-                  {/* Current Savings Input */}
-                  <div>
-                    <label htmlFor="currentSavings" className="block text-sm font-medium text-gray-700 mb-2">
-                      Current Savings
-                    </label>
-                    <input
-                      type="text"
-                      id="currentSavings"
-                      value={formData.currentSavings}
-                      onChange={(e) => handleCurrencyInput('currentSavings', e.target.value)}
-                      placeholder="$50,000"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-lg"
-                      required
-                    />
-                  </div>
+              <a
+                href="/get-started"
+                className="btn-primary px-12 py-4 text-xl font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 inline-block"
+              >
+                Begin Assessment
+              </a>
 
-                  {/* Monthly Investment Input */}
-                  <div>
-                    <label htmlFor="monthlyInvestment" className="block text-sm font-medium text-gray-700 mb-2">
-                      Monthly Investment
-                    </label>
-                    <input
-                      type="text"
-                      id="monthlyInvestment"
-                      value={formData.monthlyInvestment}
-                      onChange={(e) => handleCurrencyInput('monthlyInvestment', e.target.value)}
-                      placeholder="$500"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-lg"
-                      required
-                    />
-                  </div>
-
-                  {/* 401k Balance Input */}
-                  <div>
-                    <label htmlFor="k401Balance" className="block text-sm font-medium text-gray-700 mb-2">
-                      401k Balance
-                    </label>
-                    <input
-                      type="text"
-                      id="k401Balance"
-                      value={formData.k401Balance}
-                      onChange={(e) => handleCurrencyInput('k401Balance', e.target.value)}
-                      placeholder="$25,000"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-lg"
-                      required
-                    />
-                  </div>
-                </div>
-
+              <div className="flex items-center justify-center space-x-8 mt-8 pt-8 border-t border-gray-200">
                 <div className="text-center">
-                  <button
-                    type="submit"
-                    className="btn-primary px-12 py-4 text-lg font-semibold rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
-                  >
-                    Get Started
-                  </button>
-                  <p className="text-sm text-gray-500 mt-4">
-                    Free consultation • No obligation • Certified financial planners
-                  </p>
+                  <div className="text-2xl font-bold text-primary mb-1">6</div>
+                  <div className="text-sm text-gray-500">Simple Questions</div>
                 </div>
-              </form>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary mb-1">5</div>
+                  <div className="text-sm text-gray-500">Minutes to Complete</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary mb-1">24</div>
+                  <div className="text-sm text-gray-500">Hours to Your Plan</div>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-sm text-gray-500">
+              Free consultation • No obligation • Certified financial planners
+            </p>
           </div>
         </div>
       </section>
@@ -478,7 +393,7 @@ export default function Home() {
               </div>
               
               <div className="space-y-4">
-                <a href="#calculator" className="btn-primary px-12 py-4 text-lg font-semibold">
+                <a href="/get-started" className="btn-primary px-12 py-4 text-lg font-semibold">
                   Get Started Today
                 </a>
                 <div className="text-sm text-gray-500">
@@ -608,7 +523,7 @@ export default function Home() {
               </div>
               
               <div className="flex justify-start">
-                <a href="#calculator" className="btn-accent px-8 py-4 text-lg font-semibold">
+                <a href="/get-started" className="btn-accent px-8 py-4 text-lg font-semibold">
                   Get Started
                 </a>
               </div>
