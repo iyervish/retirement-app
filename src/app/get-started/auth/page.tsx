@@ -25,13 +25,11 @@ export default function Auth() {
     if (isSignUp) {
       // Handle sign up
       console.log('Sign up:', formData);
-      alert('Welcome to RetireWise! Your account has been created successfully.');
       // Redirect to dashboard after successful signup
       router.push('/dashboard');
     } else {
       // Handle sign in
       console.log('Sign in:', { email: formData.email, password: formData.password });
-      alert('Welcome back! You have been signed in successfully.');
       // Redirect to dashboard after successful signin
       router.push('/dashboard');
     }
