@@ -1,15 +1,11 @@
 'use client';
 
-import { useState } from 'react';
 import { 
   TrendingUp, 
   DollarSign, 
   Target, 
   Calendar,
-  PieChart as PieChartIcon,
-  BarChart3,
   ArrowUpRight,
-  ArrowDownRight,
   Settings,
   Bell,
   User
@@ -26,9 +22,7 @@ import {
   ResponsiveContainer,
   PieChart,
   Pie,
-  Cell,
-  BarChart,
-  Bar
+  Cell
 } from 'recharts';
 
 // Mock data for the dashboard
@@ -131,7 +125,7 @@ export default function Dashboard() {
         <div className="mb-8 mt-8">
           <h1 className="h1-text mb-2">Welcome back, {mockData.user.name}!</h1>
           <p className="body-large text-gray-600">
-            Here's your personalized retirement planning dashboard
+            Here&apos;s your personalized retirement planning dashboard
           </p>
         </div>
 

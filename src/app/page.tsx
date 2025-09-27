@@ -3,7 +3,8 @@
 import TypewriterText from './components/TypewriterText';
 import HeroCarousel from './components/HeroCarousel';
 import { useState } from 'react';
-import { Users, TrendingUp, Target, Award, Clock, Calculator, BarChart3, Goal, Shield, PieChart, Bell, ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+import { Users, Award, Clock, Calculator, BarChart3, Goal, Shield, PieChart, Bell, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Home() {
 
@@ -532,10 +533,12 @@ export default function Home() {
             <div className="flex justify-center lg:justify-end">
               <div className="w-full max-w-lg">
                 <div className="relative h-80 w-full rounded-2xl overflow-hidden shadow-2xl">
-                  <img 
+                  <Image 
                     src="/ready.png" 
                     alt="Ready to work with a certified financial planner" 
                     className="w-full h-full object-cover"
+                    width={400}
+                    height={320}
                   />
                 </div>
               </div>
