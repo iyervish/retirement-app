@@ -119,7 +119,7 @@ export default function GetStarted() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <nav className="bg-white border-b border-gray-200">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-6 py-8">
           <div className="flex items-center justify-between">
             <span className="logo-text text-2xl">RetireWise</span>
             <div className="text-sm text-gray-500">
@@ -210,7 +210,7 @@ export default function GetStarted() {
             <button
               onClick={handleNext}
               disabled={!isAnswered}
-              className="flex items-center space-x-2 btn-primary px-8 py-3 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center justify-center space-x-2 btn-primary px-16 py-4 disabled:opacity-50 disabled:cursor-not-allowed min-w-[200px]"
             >
               <span>{currentStep === questions.length - 1 ? 'Continue to Sign Up' : 'Next'}</span>
               <ChevronRight size={20} />
