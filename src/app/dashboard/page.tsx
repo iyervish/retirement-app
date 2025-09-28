@@ -311,7 +311,7 @@ export default function Dashboard() {
         </div>
 
         {/* Progress Summary */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
             <h4 className="text-lg font-semibold text-gray-900 mb-4">Retirement Readiness</h4>
             <div className="space-y-4">
@@ -321,7 +321,7 @@ export default function Dashboard() {
                   <span className="font-medium">{formatPercentage(mockData.goals.currentProgress)}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div 
+                  <div
                     className="bg-primary h-3 rounded-full transition-all duration-300"
                     style={{ width: `${mockData.goals.currentProgress}%` }}
                   ></div>
@@ -329,8 +329,8 @@ export default function Dashboard() {
               </div>
               <div className="pt-4 border-t border-gray-200">
                 <div className="flex items-center space-x-2 mb-2">
-                  <div 
-                    className="w-3 h-3 rounded-full" 
+                  <div
+                    className="w-3 h-3 rounded-full"
                     style={{ backgroundColor: mockData.goals.onTrack ? '#1B4332' : '#FFB627' }}
                   ></div>
                   <span className="text-sm font-medium">
@@ -338,8 +338,8 @@ export default function Dashboard() {
                   </span>
                 </div>
                 <p className="text-sm text-gray-600">
-                  {mockData.goals.onTrack 
-                    ? 'You\'re on track to meet your retirement goals!' 
+                  {mockData.goals.onTrack
+                    ? 'You\'re on track to meet your retirement goals!'
                     : 'Consider increasing your monthly contributions.'
                   }
                 </p>
@@ -370,28 +370,80 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-            <h4 className="text-lg font-semibold text-gray-900 mb-4">Next Steps</h4>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: '#D8F3DC' }}>
-                  <span className="text-xs font-bold" style={{ color: '#1B4332' }}>1</span>
-                </div>
-                <span className="text-sm text-gray-600">Review your asset allocation</span>
+        {/* Next Steps - Dedicated Row */}
+        <div className="mb-8">
+          <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl p-8 border-2 border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="flex items-center justify-between mb-6">
+              <h4 className="text-xl font-bold text-gray-900">🎯 Recommended Next Steps</h4>
+              <div className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
+                Action Required
               </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: '#FFF8DC' }}>
-                  <span className="text-xs font-bold" style={{ color: '#FFB627' }}>2</span>
+            </div>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              Take these actions to optimize your retirement strategy and stay on track to meet your goals.
+            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              <div className="group flex items-center space-x-4 p-4 bg-white rounded-lg border border-gray-200 hover:border-primary/30 hover:shadow-md transition-all duration-200 cursor-pointer">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200" style={{ backgroundColor: '#1B4332' }}>
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
                 </div>
-                <span className="text-sm text-gray-600">Consider increasing contributions</span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: '#D8F3DC' }}>
-                  <span className="text-xs font-bold" style={{ color: '#1B4332' }}>3</span>
+                <div className="flex-1">
+                  <h5 className="font-semibold text-gray-900 group-hover:text-primary transition-colors">Review your asset allocation</h5>
+                  <p className="text-sm text-gray-600">Ensure your portfolio is properly diversified for your risk tolerance</p>
                 </div>
-                <span className="text-sm text-gray-600">Schedule a consultation</span>
+                <div className="text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
               </div>
+
+              <div className="group flex items-center space-x-4 p-4 bg-white rounded-lg border border-gray-200 hover:border-accent/30 hover:shadow-md transition-all duration-200 cursor-pointer">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200" style={{ backgroundColor: '#FFB627' }}>
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h5 className="font-semibold text-gray-900 group-hover:text-accent transition-colors">Consider increasing contributions</h5>
+                  <p className="text-sm text-gray-600">Boost your monthly savings to reach retirement goals faster</p>
+                </div>
+                <div className="text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+
+              <div className="group flex items-center space-x-4 p-4 bg-white rounded-lg border border-gray-200 hover:border-primary/30 hover:shadow-md transition-all duration-200 cursor-pointer">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200" style={{ backgroundColor: '#1B4332' }}>
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h5 className="font-semibold text-gray-900 group-hover:text-primary transition-colors">Schedule a consultation</h5>
+                  <p className="text-sm text-gray-600">Meet with a certified financial planner for personalized advice</p>
+                </div>
+                <div className="text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-6 border-t border-gray-200">
+              <button className="w-full bg-primary hover:bg-primary-light text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
+                <span>View All Recommendations</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
